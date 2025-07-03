@@ -40,7 +40,7 @@ npm run dev
 The app will run on http://localhost:3000
 
 ### 📁 Project Structure
-TicTocToe/
+
 ![image](https://github.com/user-attachments/assets/4d5f5f5e-cfdc-423a-b14a-75fc05685875)
 
 ### 🧠 Logic Overview
