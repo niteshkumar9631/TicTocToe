@@ -41,14 +41,8 @@ The app will run on http://localhost:3000
 
 ### 📁 Project Structure
 TicTocToe/
-├── public/
-├── src/
-│   ├── App.jsx
-│   ├── index.js
-│   └── App.css
-├── README.md
-├── package.json
-└── ...
+![image](https://github.com/user-attachments/assets/4d5f5f5e-cfdc-423a-b14a-75fc05685875)
+
 ### 🧠 Logic Overview
 - Game board is managed as an array of 9 squares.
 - calculateWinner function checks all win conditions.
