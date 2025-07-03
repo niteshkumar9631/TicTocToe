@@ -1,0 +1,148 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base font size for rem units */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #2c2c2c;
+  color: #f5f5f5;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* Added padding for mobile safety */
+}
+
+/* Viewport Meta Tag - ADD THIS TO YOUR HTML HEAD */
+/* <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+/* Game Container */
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Status */
+.status {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+  text-align: center; /* Center align for mobile */
+}
+
+/* Board */
+.board-row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 8px; /* Better than margin for spacing */
+  margin-bottom: 8px;
+}
+
+/* Square Styles - Mobile First Approach */
+.square {
+  aspect-ratio: 1/1; /* Perfect squares */
+  width: 25vw; /* Responsive width */
+  max-width: 80px; /* Limit size on larger screens */
+  font-size: clamp(1.5rem, 8vw, 2rem); /* Responsive font */
+  font-weight: bold;
+  border: 1px solid #555;
+  background: #3e3e3e;
+  color: #f5f5f5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  user-select: none; /* Prevent text selection on tap */
+  -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
+}
+
+/* Remove hover effects for mobile */
+@media (hover: hover) {
+  .square:hover {
+    background: #555;
+  }
+}
+
+.square:active {
+  transform: scale(0.95);
+}
+
+/* Game Info */
+.game-info {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.game-info ol {
+  padding-left: 20px;
+}
+
+.game-info li {
+  margin-bottom: 8px;
+}
+
+.game-info button {
+  padding: 8px 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+/* Keyframe Animations (unchanged) */
+@keyframes fadeIn { /* ... */ }
+@keyframes appear { /* ... */ }
+@keyframes highlightAnimation { /* ... */ }
+
+.square.highlight {
+  background-color: #ffcc00;
+  animation: highlightAnimation 0.5s ease-out;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .square {
+    width: 80px; /* Fixed size for desktop */
+    height: 80px;
+  }
+  
+  /* Re-enable hover effects only for desktop */
+  .square:hover {
+    background: #555;
+    transform: scale(1.05);
+  }
+}
+
+/* Very small devices */
+@media (max-width: 350px) {
+  .status {
+    font-size: 1.2rem;
+  }
+  
+  .square {
+    width: 22vw;
+  }
+}
